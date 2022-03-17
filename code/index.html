@@ -5,6 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/86ebc00c6c.js"
+      crossorigin="anonymous"
+    ></script>
+
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -16,6 +22,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
+    <!-- Header -->
     <header
       class="bg-light d-none d-sm-flex container-fluid justify-content-between head align-items-center"
     >
@@ -30,6 +37,87 @@
         <a href="#" class="text-secondary">Tokopedia Care</a>
       </div>
     </header>
+
+    <!-- Navbar kedua -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container-fluid d-lg-flex d-inline flex-column">
+        <div class="wrap-top align-items-center">
+          <div
+            class="navbar-nav collapse navbar-collapse"
+            id="navbarNavAltMarkup"
+          >
+            <img
+              src="../images/tokped.png"
+              alt=""
+              class="logo-nav d-none d-lg-flex"
+            />
+            <a class="nav-link ms-lg-4 me-lg-3" aria-current="page" href="#"
+              >Kategori</a
+            >
+            <div class="input-group search-bar ms-lg-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Cari Laptop Baru"
+                aria-label="Recipient's username"
+                aria-describedby="basic-addon2"
+              />
+              <span class="input-group-text" id="basic-addon2"
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></span>
+            </div>
+
+            <div
+              class="button-group d-flex align-items-center mt-2 mt-md-2 mt-lg-0"
+            >
+              <a class="nav-link ms-lg-4 me-3 me-md-3 me-lg-0" href="#"
+                ><i class="fa-solid fa-cart-shopping"></i
+              ></a>
+              <button
+                type="button"
+                class="btn btn-outline-success ms-lg-5 ms-md-2 me-2"
+              >
+                Daftar
+              </button>
+              <button
+                type="button"
+                class="btn btn-success ms-lg-3 mt-2 mt-sm-0 mb-2 mb-sm-0"
+              >
+                Masuk
+              </button>
+            </div>
+          </div>
+          <div
+            class="recom-item d-lg-flex justify-content-center mt-lg-2 d-none align-items-center"
+          >
+            <a href="#" class="me-lg-3 text-secondary">Meja Belajar</a>
+            <a href="#" class="me-lg-3 text-secondary">Kandang Kucing</a>
+            <a href="#" class="me-lg-3 text-secondary">Bola Tenis</a>
+            <a href="#" class="me-lg-3 text-secondary">Samsung Galaxy S100</a>
+            <a href="#" class="me-lg-3 text-secondary"
+              >Kasur Tidur Orang Kaya</a
+            >
+            <a href="#" class="me-lg-3 text-secondary">Ceker Ayam Maknyos</a>
+            <div class="location">
+              <i class="fa-solid fa-location-dot"></i> dikirim ke
+              <b>Jakarta Pusat</b>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

@@ -10,3 +10,28 @@ a {
 .head .item-download a {
   font-size: 12px;
 }
+
+.logo-nav {
+  width: 120px;
+  height: 40px;
+}
+
+.search-bar {
+  width: 720px;
+}
+
+.recom-item a {
+  font-size: 12px;
+}
+
+.location {
+  position: absolute;
+  right: 10px;
+  font-size: 13px;
+}
+
+@media only screen and (max-width: 800px) {
+  .search-bar {
+    width: 100%;
+  }
+}
