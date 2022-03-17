@@ -1,0 +1,12 @@
+a {
+  text-decoration: none;
+}
+
+.head .item a {
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.head .item-download a {
+  font-size: 12px;
+}
