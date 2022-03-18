@@ -1,35 +1,41 @@
 a {
   text-decoration: none;
 }
-
 .head .item a {
   margin-right: 10px;
   font-size: 12px;
 }
-
 .head .item-download a {
   font-size: 12px;
 }
-
 .logo-nav {
   width: 140px;
   height: 35px;
 }
-
 .search-bar {
   width: 720px;
 }
-
 .recom-item a {
   font-size: 12px;
 }
-
 .location {
   position: absolute;
   right: 15px;
   font-size: 13px;
 }
-
+.border-test {
+  box-shadow: 0px 0px 6px -5px black;
+  border-radius: 10px;
+}
+.nav-kedua {
+  box-shadow: 0 5px 6px -6px #222;
+}
+.image-content img {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #eaeaea;
+  cursor: pointer;
+}
 @media only screen and (max-width: 800px) {
   .search-bar {
     width: 100%;
