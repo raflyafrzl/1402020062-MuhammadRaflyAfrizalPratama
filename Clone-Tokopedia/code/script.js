@@ -7,7 +7,7 @@ const nominal = $(".nominal");
 let index = 0;
 let valuePilihan = "Pulsa";
 $("document").ready(function () {
-  const element = `  <option selected value="0"></option>
+  const element = `  <option selected value="0" hidden class ="main-value"></option>
   <option value="1">1.000</option>
   <option value="2">3.000</option>
   <option value="3">5.000</option>
@@ -28,7 +28,10 @@ $("document").ready(function () {
   topUpItem.on("click", function () {
     valuePilihan = $(this).html();
     nominal.empty();
+    noTelp.val("");
+
     nominal.append(valuePilihan === "Pulsa" ? element : element2);
+    initCondition();
   });
 });
 
@@ -45,23 +48,33 @@ $("document").ready(function () {
     });
   }
 });
-$("document").ready(function () {
+
+function initCondition() {
+  nominal.prop("disabled", true);
   noTelp.on("input", function (e) {
     if (noTelp.val().length > 3) {
       nominal.removeAttr("disabled");
+      $(".main-value").html("Pilihan");
+      $(".main-value").prop("hidden", true);
     } else {
       nominal.prop("disabled", true);
+      $(".main-value").html("");
       nominal.prop("selectedIndex", 0);
     }
   });
+  nominal.on("click", function () {});
   nominal.change(function (e) {
     e.preventDefault();
+    console.log();
     buttonBuy.removeClass("disabled");
     buttonBuy.removeClass("btn-secondary");
     buttonBuy.css("background-color", "#ed7a21");
     buttonBuy.css("color", "#fff");
   });
+}
 
+$("document").ready(function () {
+  initCondition();
   buttonBuy.click(function (e) {
     e.preventDefault();
   });
@@ -70,13 +83,21 @@ $("document").ready(function () {
 $("document").ready(function () {
   buttonBuy.on("click", function () {
     const nominalValue = $(".nominal option:selected").text();
+    console.log(nominalValue);
     let confirmBuy;
+    confirmBuy = confirm(
+      `Pembelian ${valuePilihan === "Pulsa" ? "Pulsa" : "Paket Data"} ${
+        valuePilihan === "Pulsa" ? "Sebesar" + nominalValue : nominalValue
+      } `
+    );
+
     if (confirmBuy) {
       if (valuePilihan === "Pulsa") {
         const spliceMoney = nominalValue.split(".");
-        confirmBuy = confirm(`Pembelian pulsa sebesar ${nominalValue}`);
+        console.log(spliceMoney);
 
         if (Number(spliceMoney[0] >= 10)) {
+          console.log(spliceMoney[0]);
           alert(
             `Total harga pulsa Rp. ${
               Number(spliceMoney[0]) + 2 + "." + spliceMoney[1]
@@ -89,19 +110,15 @@ $("document").ready(function () {
             },- ke nomor ${noTelp.val()} sedang di proses. Terima kasih :)`
           );
         }
-      }
-    } else {
-      confirmBuy = confirm(
-        `Pembelian paket data ${
-          nominalValue.split("/")[0]
-        } ke nomor ${noTelp.val()}`
-      );
-      if (confirmBuy) {
-        alert(
-          `Pembelian paket data ${
-            nominalValue.split("/")[1]
-          } ke nomor ${noTelp.val()} sedang di proses. Terima kasih :) `
-        );
+      } else {
+        console.log("OK!");
+        if (confirmBuy) {
+          alert(
+            `Pembelian paket data ${
+              nominalValue.split("/")[1]
+            } ke nomor ${noTelp.val()} sedang di proses. Terima kasih :) `
+          );
+        }
       }
     }
   });

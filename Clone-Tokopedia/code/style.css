@@ -59,6 +59,7 @@ span {
 
 .top-up-item:hover {
   color: black;
+  transition: 1s ease;
 }
 
 .all-items {
